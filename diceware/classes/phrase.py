@@ -20,5 +20,6 @@ class Phrase:
         return {
             "word_count": self.word_count,
             "separator": self.separator,
-            "phrase": self.as_string()
+            "phrase": self.as_string(),
+            "words": [word_obj.as_dict() for word_obj in self.word_objects]
         }

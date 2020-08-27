@@ -20,5 +20,5 @@ class Word:
     def as_dict(self):
         return {
             "word": self.word,
-            "word_list": self.wordlist_key
+            "word_list_key": self.wordlist_key
         }
