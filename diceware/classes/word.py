@@ -16,3 +16,9 @@ class Word:
 
         self.word = wordlist[word_key_int]
         self.wordlist_key = word_key_int
+
+    def as_dict(self):
+        return {
+            "word": self.word,
+            "word_list": self.wordlist_key
+        }

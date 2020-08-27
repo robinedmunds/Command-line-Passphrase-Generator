@@ -14,3 +14,11 @@ def test_word_wordlist_key_is_type_int():
 
     word_obj = Word(wordlist)
     assert isinstance(word_obj.wordlist_key, int)
+
+
+def test_word_as_dict_method_returns_dict():
+    wordlist = parse_wordlist_from_file(
+        "wordlists\\eff_short_wordlist_1.txt")
+
+    word_obj = Word(wordlist)
+    assert isinstance(word_obj.as_dict(), dict)
