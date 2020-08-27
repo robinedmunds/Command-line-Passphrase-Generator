@@ -11,3 +11,14 @@ class Phrase:
             self.word_objects.append(
                 Word(wordlist)
             )
+
+    def as_string(self):
+        words = [word_obj.word for word_obj in self.word_objects]
+        return self.separator.join(words)
+
+    def as_dict(self):
+        return {
+            "word_count": self.word_count,
+            "separator": self.separator,
+            "phrase": self.as_string()
+        }

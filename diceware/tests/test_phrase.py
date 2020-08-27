@@ -24,3 +24,19 @@ def test_phrase_words_separator():
 
     phrase_obj = Phrase(wordlist, 3, ".")
     assert phrase_obj.separator == "."
+
+
+def test_phrase_as_dict_method_returns_dict():
+    wordlist = parse_wordlist_from_file(
+        "wordlists\\eff_short_wordlist_1.txt")
+
+    phrase_obj = Phrase(wordlist, 3, ".")
+    assert isinstance(phrase_obj.as_dict(), dict)
+
+
+def test_phrase_as_string_method_returns_string():
+    wordlist = parse_wordlist_from_file(
+        "wordlists\\eff_short_wordlist_1.txt")
+
+    phrase_obj = Phrase(wordlist, 3, ".")
+    assert isinstance(phrase_obj.as_string(), str)
