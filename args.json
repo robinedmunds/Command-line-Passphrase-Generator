@@ -1,0 +1,8 @@
+{
+  "description": "Diceware passphrase generator written by Robin Edmunds (https://edmunds.me). Inspired by and built upon the work of: http://world.std.com/~reinhold/diceware.html https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases",
+  "words": "Number of words in each passphrase. (Default: 4)",
+  "separator": "Character to use as separator between words. NOTE: Special characters may need to be enclosed in quotes. (Default: space)",
+  "count": "Number of passphrases to generate. (Default: 20)",
+  "raw": "Raw passphrase output omitting phrase lengths. (Default: False)",
+  "wordlist": "Wordlist file location. (Default: \"wordlists/eff_short_wordlist_1.txt\")"
+}
