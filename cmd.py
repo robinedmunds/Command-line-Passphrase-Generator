@@ -5,6 +5,7 @@ from diceware.classes.phrases import Phrases
 
 
 def main():
+    # CONSOLE UI
     help = json.loads(open("args.json", "r").read())
     parser = argparse.ArgumentParser(
         description=help["description"]
@@ -27,11 +28,27 @@ def main():
     )
     args = parser.parse_args()
     kwargs = {
-        "words": args.words,
+        "wordlist": parse_wordlist(args.wordlist),
+        "word_count": args.words,
         "separator": args.separator,
-        "count": args.count,
-        "wordlist": parse_wordlist(args.wordlist)
+        "phrase_count": args.count
     }
+
+    # GENERATE
+    phrases_dict = Phrases(**kwargs).as_dict()
+    phrases = [phrase["phrase"] for phrase in phrases_dict["phrases"]]
+
+    # CONSOLE OUTPUT
+    if args.raw:
+        for p in phrases:
+            print(f"{p}")
+    else:
+        print("\nLength\tPassphrase\n" +
+              "------\t----------\n")
+        for p in phrases:
+            length = len(p)
+            print(f"{length}\t{p}")
+        print()
 
 
 if __name__ == "__main__":
