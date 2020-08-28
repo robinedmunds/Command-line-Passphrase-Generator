@@ -19,5 +19,6 @@ class Phrases:
             "word_count": self.word_count,
             "separator": self.separator,
             "phrase_count": self.phrase_count,
-            "phrases": [phrase_obj.as_dict() for phrase_obj in self.phrase_objects],
+            "phrases": [phrase_obj.as_dict() for phrase_obj in
+                        self.phrase_objects],
         }
