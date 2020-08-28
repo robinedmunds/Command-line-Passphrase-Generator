@@ -33,6 +33,38 @@ def test_phrase_as_dict_method_returns_dict():
     assert isinstance(phrase_obj.as_dict(), dict)
 
 
+def test_phrase_as_dict_method_returns_dict_containing_word_count():
+    wordlist = parse_wordlist()
+    phrase_obj = Phrase(wordlist, 3, ".")
+    output = phrase_obj.as_dict()
+    assert "word_count" in output
+    assert isinstance(output["word_count"], int)
+
+
+def test_phrase_as_dict_method_returns_dict_containing_separator():
+    wordlist = parse_wordlist()
+    phrase_obj = Phrase(wordlist, 3, ".")
+    output = phrase_obj.as_dict()
+    assert "separator" in output
+    assert isinstance(output["separator"], str)
+
+
+def test_phrase_as_dict_method_returns_dict_containing_phrase():
+    wordlist = parse_wordlist()
+    phrase_obj = Phrase(wordlist, 3, ".")
+    output = phrase_obj.as_dict()
+    assert "phrase" in output
+    assert isinstance(output["phrase"], str)
+
+
+def test_phrase_as_dict_method_returns_dict_containing_words():
+    wordlist = parse_wordlist()
+    phrase_obj = Phrase(wordlist, 3, ".")
+    output = phrase_obj.as_dict()
+    assert "words" in output
+    assert isinstance(output["words"], list)
+
+
 def test_phrase_as_string_method_returns_string():
     wordlist = parse_wordlist()
     phrase_obj = Phrase(wordlist, 3, ".")
