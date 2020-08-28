@@ -1,8 +1,8 @@
-# Command-line Diceware Passphrase Generator
+# Command-line Passphrase Generator
 
 ## About
 
-Command-line passphrase generator written by [Robin Edmunds](https://tersedigital.com) in Python3. Inspired by the work of [Arnold G. Reinhold](http://world.std.com/~reinhold/). Code structured in such a way as to make for easy code re-use in an API.
+Command-line Diceware passphrase generator written by [Robin Edmunds](https://tersedigital.com) in Python3. Inspired by the work of [Arnold G. Reinhold](http://world.std.com/~reinhold/). Code structured in such a way as to make for easy code re-use in an API.
 
 ## Usage
 
