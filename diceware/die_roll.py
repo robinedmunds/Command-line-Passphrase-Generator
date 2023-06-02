@@ -1,10 +1,10 @@
-from random import choice
-
+import math
+import random
 
 def die_roll():
-    die_values = range(1, 7)
-    return choice(die_values)
-
+    return math.ceil(
+        random.random() * 6
+    )
 
 if __name__ == "__main__":
     die_roll()
