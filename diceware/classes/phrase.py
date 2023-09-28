@@ -1,22 +1,34 @@
-from .word import Word
+from typing import TypedDict
+from .word import Word, Word_as_dict
+
+Wordlist = dict[int, str]
+
+
+class Phrase_as_dict(TypedDict, total=True):
+    word_count: int
+    separator: str
+    phrase: str
+    words: list[Word_as_dict]
 
 
 class Phrase:
-    def __init__(self, wordlist, word_count, separator):
-        self.word_count = word_count
-        self.separator = separator
-        self.word_objects = []
+    def __init__(self, wordlist: Wordlist, word_count: int,
+                 separator: str) -> None:
+        self.word_count: int = word_count
+        self.separator: str = separator
+        self.word_objects: list[Word] = []
 
-        for i in range(word_count):
+        for _ in range(word_count):
             self.word_objects.append(
                 Word(wordlist)
             )
 
-    def as_string(self):
-        words = [word_obj.word for word_obj in self.word_objects]
+    def as_string(self) -> str:
+        words: list[str] = [word_obj.word for word_obj in self.word_objects]
+
         return self.separator.join(words)
 
-    def as_dict(self):
+    def as_dict(self) -> Phrase_as_dict:
         return {
             "word_count": self.word_count,
             "separator": self.separator,

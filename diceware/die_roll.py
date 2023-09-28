@@ -1,10 +1,10 @@
-import math
+from math import ceil
 import random
 
 
-def die_roll():
-    return math.ceil(
-        random.random() * 6
+def die_roll(sides: int = 6) -> int:
+    return ceil(
+        random.random() * sides
     )
 
 

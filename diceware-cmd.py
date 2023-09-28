@@ -27,14 +27,14 @@ def main():
         default="wordlists/eff_short_wordlist_1.txt", help=help["wordlist"]
     )
     args = parser.parse_args()
+
+    # GENERATE
     kwargs = {
         "wordlist": parse_wordlist(args.wordlist),
         "word_count": args.words,
         "separator": args.separator,
         "phrase_count": args.count
     }
-
-    # GENERATE
     phrases_dict = Phrases(**kwargs).as_dict()
     phrases = [phrase["phrase"] for phrase in phrases_dict["phrases"]]
 
