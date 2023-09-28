@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 import argparse
 from diceware.parse_wordlist import from_file as parse_wordlist
