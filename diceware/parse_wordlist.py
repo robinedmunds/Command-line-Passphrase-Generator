@@ -17,7 +17,6 @@ def from_file(path: PathLike) -> Wordlist | None:
             fields = line.split("\t")
             key = int(fields[0])
             word = fields[1].strip()
-            # word = fields[1].replace("\r\n", "").replace("\n", "")
             wordlist[key] = word
 
         if len(wordlist) not in [6**n for n in range(4, 9)]:
