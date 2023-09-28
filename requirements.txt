@@ -1,3 +1,4 @@
 pycodestyle
 autopep8
 mypy
+pytest
