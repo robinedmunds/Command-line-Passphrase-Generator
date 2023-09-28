@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import json
 import argparse
+from pathlib import Path
 from diceware.parse_wordlist import from_file as parse_wordlist
 from diceware.classes.phrases import Phrases
 
@@ -31,7 +32,7 @@ def main():
 
     # GENERATE
     kwargs = {
-        "wordlist": parse_wordlist(args.wordlist),
+        "wordlist": parse_wordlist(Path(args.wordlist)),
         "word_count": args.words,
         "separator": args.separator,
         "phrase_count": args.count

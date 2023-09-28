@@ -3,14 +3,14 @@ from os import PathLike
 Wordlist = dict[int, str]
 
 
-def from_file(dicewareFile: str | PathLike) -> Wordlist | None:
+def from_file(path: PathLike) -> Wordlist | None:
     """Takes diceware wordlist file path. Returns dictionary object.
 
     Loads diceware formatted wordlist file into memory and returns dictionary
     object. Format: {1111: "lake"}
     """
     try:
-        file = open(dicewareFile, "r")
+        file = open(path, "r")
         wordlist: Wordlist = {}
 
         for line in file:
