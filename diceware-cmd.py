@@ -2,13 +2,17 @@
 import json
 import argparse
 from pathlib import Path
+from os import path, PathLike
 from diceware.parse_wordlist import from_file as parse_wordlist
 from diceware.classes.phrases import Phrases
 
 
-def main():
+def main() -> None:
+    BASE_DIR: PathLike = Path(path.dirname(path.abspath(__file__)))
+
     # CONSOLE UI
-    help = json.loads(open("args.json", "r").read())
+    help_path = Path(BASE_DIR, Path("args.json"))
+    help = json.loads(open(help_path, "r").read())
     parser = argparse.ArgumentParser(
         description=help["description"]
     )
@@ -32,7 +36,7 @@ def main():
 
     # GENERATE
     kwargs = {
-        "wordlist": parse_wordlist(Path(args.wordlist)),
+        "wordlist": parse_wordlist(Path(BASE_DIR, args.wordlist)),
         "word_count": args.words,
         "separator": args.separator,
         "phrase_count": args.count
